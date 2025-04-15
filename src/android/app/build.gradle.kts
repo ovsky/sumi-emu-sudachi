@@ -104,7 +104,7 @@ android {
                 signingConfigs.getByName("default")
             }
 
-            resValue("string", "app_name_suffixed", "Redachi")
+            resValue("string", "app_name_suffixed", "Sumi")
             isMinifyEnabled = true
             isDebuggable = false
             proguardFiles(
@@ -117,7 +117,7 @@ android {
         // Attaches 'debug' suffix to version and package name, allowing installation alongside the release build.
         register("relWithDebInfo") {
             isDefault = true
-            resValue("string", "app_name_suffixed", "Redachi Debug Release")
+            resValue("string", "app_name_suffixed", "Sumi Debug Release")
             signingConfig = signingConfigs.getByName("default")
             isMinifyEnabled = true
             isDebuggable = true
@@ -134,7 +134,7 @@ android {
         // Attaches 'debug' suffix to version and package name, allowing installation alongside the release build.
         debug {
             signingConfig = signingConfigs.getByName("default")
-            resValue("string", "app_name_suffixed", "Redachi Debug")
+            resValue("string", "app_name_suffixed", "Sumi Debug")
             isDebuggable = true
             isJniDebuggable = true
             versionNameSuffix = "-debug"
