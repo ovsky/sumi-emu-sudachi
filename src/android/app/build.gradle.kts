@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import android.annotation.SuppressLint
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+// import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 import com.github.triplet.gradle.androidpublisher.ReleaseStatus
 
 plugins {
@@ -11,7 +11,7 @@ plugins {
     id("kotlin-parcelize")
     kotlin("plugin.serialization") version "1.9.20"
     id("androidx.navigation.safeargs.kotlin")
-    id("org.jlleitschuh.gradle.ktlint") version "12.2.0"
+    // id("org.jlleitschuh.gradle.ktlint") version "12.2.0"
     id("com.github.triplet.play") version "3.12.1"
 }
 
@@ -187,29 +187,29 @@ android {
     }
 }
 
-tasks.register<Delete>("ktlintReset") {
-    delete(File(layout.buildDirectory.toString() + File.separator + "intermediates/ktLint"))
-}
+// tasks.register<Delete>("ktlintReset") {
+//     delete(File(layout.buildDirectory.toString() + File.separator + "intermediates/ktLint"))
+// }
 
-val showFormatHelp = {
-    logger.lifecycle(
-        "If this check fails, please try running \"gradlew ktlintFormat\" for automatic " +
-            "codestyle fixes"
-    )
-}
-tasks.getByPath("ktlintKotlinScriptCheck").doFirst { showFormatHelp.invoke() }
-tasks.getByPath("ktlintMainSourceSetCheck").doFirst { showFormatHelp.invoke() }
-tasks.getByPath("loadKtlintReporters").dependsOn("ktlintReset")
+// val showFormatHelp = {
+//     logger.lifecycle(
+//         "If this check fails, please try running \"gradlew ktlintFormat\" for automatic " +
+//             "codestyle fixes"
+//     )
+// }
+// tasks.getByPath("ktlintKotlinScriptCheck").doFirst { showFormatHelp.invoke() }
+// tasks.getByPath("ktlintMainSourceSetCheck").doFirst { showFormatHelp.invoke() }
+// tasks.getByPath("loadKtlintReporters").dependsOn("ktlintReset")
 
-ktlint {
-    version.set("0.47.1")
-    // version.set("1.5.0")
-    android.set(true)
-    ignoreFailures.set(true)
-    reporters {
-        reporter(ReporterType.CHECKSTYLE)
-    }
-}
+// ktlint {
+//     version.set("0.47.1")
+//     // version.set("1.5.0")
+//     android.set(true)
+//     ignoreFailures.set(true)
+//     reporters {
+//         reporter(ReporterType.CHECKSTYLE)
+//     }
+// }
 
 play {
     val keyPath = System.getenv("SERVICE_ACCOUNT_KEY_PATH")
