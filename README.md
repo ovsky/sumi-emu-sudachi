@@ -20,6 +20,18 @@
 
 ---
 
+### Suggested GPU Drivers
+
+To achieve best performance, download the best driver for your device and aplly it in Sumi
+
+#### Mesa / Adreno - Sources
+https://github.com/XForYouX/Turnip_Driver/releases
+
+#### Mesa / Adreno / Mediatek - Sources
+https://github.com/K11MCH1/AdrenoToolsDrivers/releases
+
+---
+
 ### Contact
 
 You can contact the core developers of Sumi at our **[Discord](https://discord.gg/YhpdhVBmXX)**. If you have any questions, feel free to ask. It's also a good place to just keep up with the emulator, as most talk regarding development goes on over there.
