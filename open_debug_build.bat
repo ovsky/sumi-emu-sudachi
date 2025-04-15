@@ -1,2 +1,2 @@
-cd src\android\app\build\outputs\apk\ea\debug\
+cd src\android\app\build\outputs\apk\
 explorer .
