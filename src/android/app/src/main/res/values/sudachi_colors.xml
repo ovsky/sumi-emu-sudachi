@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sudachi_primary">#990E00</color>
+    <color name="sudachi_onPrimary">#FFFFFF</color>
+    <color name="sudachi_primaryContainer">#EEDEDD</color>
+    <color name="sudachi_onPrimaryContainer">#400200</color>
+    <color name="sudachi_secondary">#775650</color>
+    <color name="sudachi_onSecondary">#FFFFFF</color>
+    <color name="sudachi_secondaryContainer">#FFDAD4</color>
+    <color name="sudachi_onSecondaryContainer">#2C1511</color>
+    <color name="sudachi_tertiary">#6F5C2E</color>
+    <color name="sudachi_onTertiary">#FFFFFF</color>
+    <color name="sudachi_tertiaryContainer">#FAE0A6</color>
+    <color name="sudachi_onTertiaryContainer">#251A00</color>
+    <color name="sudachi_error">#BA1A1A</color>
+    <color name="sudachi_errorContainer">#FFDAD6</color>
+    <color name="sudachi_onError">#FFFFFF</color>
+    <color name="sudachi_onErrorContainer">#410002</color>
+    <color name="sudachi_background">#FFFBFF</color>
+    <color name="sudachi_onBackground">#201A19</color>
+    <color name="sudachi_surface">#FFFBFF</color>
+    <color name="sudachi_onSurface">#201A19</color>
+    <color name="sudachi_surfaceVariant">#F5DDD9</color>
+    <color name="sudachi_onSurfaceVariant">#534340</color>
+    <color name="sudachi_outline">#857370</color>
+    <color name="sudachi_inverseOnSurface">#FBEEEB</color>
+    <color name="sudachi_inverseSurface">#362F2D</color>
+    <color name="sudachi_inversePrimary">#FFB4A6</color>
+    <color name="sudachi_shadow">#000000</color>
+    <color name="sudachi_surfaceTint">#B52612</color>
+    <color name="sudachi_outlineVariant">#D8C2BE</color>
+
+    <color name="sudachi_ea_background_start">#99FFE1</color>
+    <color name="sudachi_ea_background_end">#76C5FF</color>
+
+</resources>

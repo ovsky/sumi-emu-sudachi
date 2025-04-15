@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Sudachi.Splash.Main" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/sudachi_surface</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_sudachi_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.Sudachi.Main</item>
+    </style>
+
+    <style name="Theme.Sudachi.Main" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sudachi_primary</item>
+        <item name="colorOnPrimary">@color/sudachi_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/sudachi_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/sudachi_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/sudachi_secondary</item>
+        <item name="colorOnSecondary">@color/sudachi_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/sudachi_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/sudachi_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/sudachi_tertiary</item>
+        <item name="colorOnTertiary">@color/sudachi_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/sudachi_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/sudachi_onTertiaryContainer</item>
+        <item name="colorError">@color/sudachi_error</item>
+        <item name="colorErrorContainer">@color/sudachi_errorContainer</item>
+        <item name="colorOnError">@color/sudachi_onError</item>
+        <item name="colorOnErrorContainer">@color/sudachi_onErrorContainer</item>
+        <item name="android:colorBackground">@color/sudachi_background</item>
+        <item name="colorOnBackground">@color/sudachi_onBackground</item>
+        <item name="colorSurface">@color/sudachi_surface</item>
+        <item name="colorOnSurface">@color/sudachi_onSurface</item>
+        <item name="colorSurfaceVariant">@color/sudachi_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/sudachi_onSurfaceVariant</item>
+        <item name="colorOutline">@color/sudachi_outline</item>
+        <item name="colorOnSurfaceInverse">@color/sudachi_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/sudachi_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/sudachi_inversePrimary</item>
+        <item name="android:shadowColor">@color/sudachi_shadow</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <item name="sliderStyle">@style/SudachiSlider</item>
+        <item name="materialAlertDialogTheme">@style/SudachiMaterialDialog</item>
+
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+
+</resources>
