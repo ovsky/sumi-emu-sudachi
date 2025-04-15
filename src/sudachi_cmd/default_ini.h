@@ -307,6 +307,7 @@ disable_shader_loop_safety_checks =
 # Which Vulkan physical device to use (defaults to 0)
 vulkan_device =
 
+# -1: 0.35x (252p/378p) [UNSAFE]
 # 0: 0.5x (360p/540p) [EXPERIMENTAL]
 # 1: 0.75x (540p/810p) [EXPERIMENTAL]
 # 2 (default): 1x (720p/1080p)
