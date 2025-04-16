@@ -2967,7 +2967,7 @@ bool GMainWindow::CreateShortcutMessagesGUI(QWidget* parent, int imsg, const QSt
 
 bool GMainWindow::MakeShortcutIcoPath(const u64 program_id, const std::string_view game_file_name,
                                       std::filesystem::path& out_icon_path) {
-    // Get path to Sumi icons directory & icon extension
+    // Get path to Sudachi icons directory & icon extension
     std::string ico_extension = "png";
 #if defined(_WIN32)
     out_icon_path = Common::FS::GetSudachiPath(Common::FS::SudachiPath::IconsDir);

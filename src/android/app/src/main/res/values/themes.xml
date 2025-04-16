@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Sumi.Splash.Main" parent="Theme.SplashScreen">
+    <style name="Theme.Sudachi.Splash.Main" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/sudachi_surface</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_sudachi_round</item>
-        <item name="postSplashScreenTheme">@style/Theme.Sumi.Main</item>
+        <item name="postSplashScreenTheme">@style/Theme.Sudachi.Main</item>
     </style>
 
-    <style name="Theme.Sumi.Main" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Sudachi.Main" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/sudachi_primary</item>
         <item name="colorOnPrimary">@color/sudachi_onPrimary</item>
         <item name="colorPrimaryContainer">@color/sudachi_primaryContainer</item>
