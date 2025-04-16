@@ -4,6 +4,8 @@
 #pragma once
 
 #include <vector>
+#include <array>    // Included for std::array
+#include <cstddef>  // Included for offsetof
 
 #include "common/common_types.h"
 #include "shader_recompiler/backend/bindings.h"
@@ -30,12 +32,37 @@ constexpr u32 RESCALING_LAYOUT_WORDS_OFFSET = offsetof(RescalingLayout, rescalin
 constexpr u32 RESCALING_LAYOUT_DOWN_FACTOR_OFFSET = offsetof(RescalingLayout, down_factor);
 constexpr u32 RENDERAREA_LAYOUT_OFFSET = offsetof(RenderAreaLayout, render_area);
 
+/**
+ * Emits SPIR-V code from the intermediate representation.
+ *
+ * @param profile The profile information.
+ * @param runtime_info Runtime information for shader execution.
+ * @param program The intermediate representation program.
+ * @param bindings Output parameter for binding information.
+ * @param enable_optimization If true, SPIR-V optimization passes will be run. Defaults to true.
+ * @return A vector containing the generated SPIR-V binary code (as 32-bit words).
+ *
+ * @note The actual optimization logic needs to be implemented in the corresponding .cpp file
+ * by conditionally invoking SPIR-V optimization tools/libraries based on this flag.
+ */
 [[nodiscard]] std::vector<u32> EmitSPIRV(const Profile& profile, const RuntimeInfo& runtime_info,
-                                         IR::Program& program, Bindings& bindings);
+                                         IR::Program& program, Bindings& bindings,
+                                         bool enable_optimization = true); // Added optimization flag
 
-[[nodiscard]] inline std::vector<u32> EmitSPIRV(const Profile& profile, IR::Program& program) {
+
+/**
+ * Convenience overload for EmitSPIRV without explicit RuntimeInfo and Bindings.
+ *
+ * @param profile The profile information.
+ * @param program The intermediate representation program.
+ * @param enable_optimization If true, SPIR-V optimization passes will be run. Defaults to true.
+ * @return A vector containing the generated SPIR-V binary code (as 32-bit words).
+ */
+[[nodiscard]] inline std::vector<u32> EmitSPIRV(const Profile& profile, IR::Program& program,
+                                                bool enable_optimization = true) { // Added optimization flag
     Bindings binding;
-    return EmitSPIRV(profile, {}, program, binding);
+    // Pass the optimization flag to the main implementation
+    return EmitSPIRV(profile, {}, program, binding, enable_optimization);
 }
 
 } // namespace Shader::Backend::SPIRV
