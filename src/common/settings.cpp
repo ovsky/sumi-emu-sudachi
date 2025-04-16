@@ -114,10 +114,10 @@ void LogSettings() {
         LOG_INFO(Config, "{}: {}", name, Common::FS::PathToUTF8String(path));
     };
 
-    LOG_INFO(Config, "sudachi Configuration:");
+    LOG_INFO(Config, "sumi Configuration:");
     for (auto& [category, settings] : values.linkage.by_category) {
         for (const auto& setting : settings) {
-            if (setting->Id() == values.sudachi_token.Id()) {
+            if (setting->Id() == values.sumi_token.Id()) {
                 // Hide the token secret, for security reasons.
                 continue;
             }
@@ -130,11 +130,11 @@ void LogSettings() {
             log_setting(name, setting->Canonicalize());
         }
     }
-    log_path("DataStorage_CacheDir", Common::FS::GetSudachiPath(Common::FS::SudachiPath::CacheDir));
-    log_path("DataStorage_ConfigDir", Common::FS::GetSudachiPath(Common::FS::SudachiPath::ConfigDir));
-    log_path("DataStorage_LoadDir", Common::FS::GetSudachiPath(Common::FS::SudachiPath::LoadDir));
-    log_path("DataStorage_NANDDir", Common::FS::GetSudachiPath(Common::FS::SudachiPath::NANDDir));
-    log_path("DataStorage_SDMCDir", Common::FS::GetSudachiPath(Common::FS::SudachiPath::SDMCDir));
+    log_path("DataStorage_CacheDir", Common::FS::GetSumiPath(Common::FS::SumiPath::CacheDir));
+    log_path("DataStorage_ConfigDir", Common::FS::GetSumiPath(Common::FS::SumiPath::ConfigDir));
+    log_path("DataStorage_LoadDir", Common::FS::GetSumiPath(Common::FS::SumiPath::LoadDir));
+    log_path("DataStorage_NANDDir", Common::FS::GetSumiPath(Common::FS::SumiPath::NANDDir));
+    log_path("DataStorage_SDMCDir", Common::FS::GetSumiPath(Common::FS::SumiPath::SDMCDir));
 }
 
 void UpdateGPUAccuracy() {

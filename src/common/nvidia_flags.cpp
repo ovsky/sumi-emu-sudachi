@@ -14,7 +14,7 @@ namespace Common {
 void ConfigureNvidiaEnvironmentFlags() {
 #ifdef _WIN32
     const auto nvidia_shader_dir =
-        Common::FS::GetSudachiPath(Common::FS::SudachiPath::ShaderDir) / "nvidia";
+        Common::FS::GetSumiPath(Common::FS::SumiPath::ShaderDir) / "nvidia";
 
     if (!Common::FS::CreateDirs(nvidia_shader_dir)) {
         return;

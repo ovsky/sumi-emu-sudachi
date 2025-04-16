@@ -56,10 +56,10 @@ namespace fs = std::filesystem;
 
 /**
  * The PathManagerImpl is a singleton allowing to manage the mapping of
- * SudachiPath enums to real filesystem paths.
- * This class provides 2 functions: GetSudachiPathImpl and SetSudachiPathImpl.
- * These are used by GetSudachiPath and SetSudachiPath respectively to get or modify
- * the path mapped by the SudachiPath enum.
+ * SumiPath enums to real filesystem paths.
+ * This class provides 2 functions: GetSumiPathImpl and SetSumiPathImpl.
+ * These are used by GetSumiPath and SetSumiPath respectively to get or modify
+ * the path mapped by the SumiPath enum.
  */
 class PathManagerImpl {
 public:
@@ -75,62 +75,62 @@ public:
     PathManagerImpl(PathManagerImpl&&) = delete;
     PathManagerImpl& operator=(PathManagerImpl&&) = delete;
 
-    [[nodiscard]] const fs::path& GetSudachiPathImpl(SudachiPath sudachi_path) {
-        return sudachi_paths.at(sudachi_path);
+    [[nodiscard]] const fs::path& GetSumiPathImpl(SumiPath sumi_path) {
+        return sumi_paths.at(sumi_path);
     }
 
-    void SetSudachiPathImpl(SudachiPath sudachi_path, const fs::path& new_path) {
-        sudachi_paths.insert_or_assign(sudachi_path, new_path);
+    void SetSumiPathImpl(SumiPath sumi_path, const fs::path& new_path) {
+        sumi_paths.insert_or_assign(sumi_path, new_path);
     }
 
-    void Reinitialize(fs::path sudachi_path = {}) {
-        fs::path sudachi_path_cache;
-        fs::path sudachi_path_config;
+    void Reinitialize(fs::path sumi_path = {}) {
+        fs::path sumi_path_cache;
+        fs::path sumi_path_config;
 
 #ifdef _WIN32
 #ifdef SUDACHI_ENABLE_PORTABLE
-        sudachi_path = GetExeDirectory() / PORTABLE_DIR;
+        sumi_path = GetExeDirectory() / PORTABLE_DIR;
 #endif
-        if (!IsDir(sudachi_path)) {
-            sudachi_path = GetAppDataRoamingDirectory() / SUDACHI_DIR;
+        if (!IsDir(sumi_path)) {
+            sumi_path = GetAppDataRoamingDirectory() / SUDACHI_DIR;
         }
 
-        sudachi_path_cache = sudachi_path / CACHE_DIR;
-        sudachi_path_config = sudachi_path / CONFIG_DIR;
+        sumi_path_cache = sumi_path / CACHE_DIR;
+        sumi_path_config = sumi_path / CONFIG_DIR;
 #elif ANDROID
-        ASSERT(!sudachi_path.empty());
-        sudachi_path_cache = sudachi_path / CACHE_DIR;
-        sudachi_path_config = sudachi_path / CONFIG_DIR;
+        ASSERT(!sumi_path.empty());
+        sumi_path_cache = sumi_path / CACHE_DIR;
+        sumi_path_config = sumi_path / CONFIG_DIR;
 #else
 #ifdef SUDACHI_ENABLE_PORTABLE
-        sudachi_path = GetCurrentDir() / PORTABLE_DIR;
+        sumi_path = GetCurrentDir() / PORTABLE_DIR;
 #endif
-        if (Exists(sudachi_path) && IsDir(sudachi_path)) {
-            sudachi_path_cache = sudachi_path / CACHE_DIR;
-            sudachi_path_config = sudachi_path / CONFIG_DIR;
+        if (Exists(sumi_path) && IsDir(sumi_path)) {
+            sumi_path_cache = sumi_path / CACHE_DIR;
+            sumi_path_config = sumi_path / CONFIG_DIR;
         } else {
-            sudachi_path = GetDataDirectory("XDG_DATA_HOME") / SUDACHI_DIR;
-            sudachi_path_cache = GetDataDirectory("XDG_CACHE_HOME") / SUDACHI_DIR;
-            sudachi_path_config = GetDataDirectory("XDG_CONFIG_HOME") / SUDACHI_DIR;
+            sumi_path = GetDataDirectory("XDG_DATA_HOME") / SUDACHI_DIR;
+            sumi_path_cache = GetDataDirectory("XDG_CACHE_HOME") / SUDACHI_DIR;
+            sumi_path_config = GetDataDirectory("XDG_CONFIG_HOME") / SUDACHI_DIR;
         }
 #endif
 
-        GenerateSudachiPath(SudachiPath::SudachiDir, sudachi_path);
-        GenerateSudachiPath(SudachiPath::AmiiboDir, sudachi_path / AMIIBO_DIR);
-        GenerateSudachiPath(SudachiPath::CacheDir, sudachi_path_cache);
-        GenerateSudachiPath(SudachiPath::ConfigDir, sudachi_path_config);
-        GenerateSudachiPath(SudachiPath::CrashDumpsDir, sudachi_path / CRASH_DUMPS_DIR);
-        GenerateSudachiPath(SudachiPath::DumpDir, sudachi_path / DUMP_DIR);
-        GenerateSudachiPath(SudachiPath::KeysDir, sudachi_path / KEYS_DIR);
-        GenerateSudachiPath(SudachiPath::LoadDir, sudachi_path / LOAD_DIR);
-        GenerateSudachiPath(SudachiPath::LogDir, sudachi_path / LOG_DIR);
-        GenerateSudachiPath(SudachiPath::NANDDir, sudachi_path / NAND_DIR);
-        GenerateSudachiPath(SudachiPath::PlayTimeDir, sudachi_path / PLAY_TIME_DIR);
-        GenerateSudachiPath(SudachiPath::ScreenshotsDir, sudachi_path / SCREENSHOTS_DIR);
-        GenerateSudachiPath(SudachiPath::SDMCDir, sudachi_path / SDMC_DIR);
-        GenerateSudachiPath(SudachiPath::ShaderDir, sudachi_path / SHADER_DIR);
-        GenerateSudachiPath(SudachiPath::TASDir, sudachi_path / TAS_DIR);
-        GenerateSudachiPath(SudachiPath::IconsDir, sudachi_path / ICONS_DIR);
+        GenerateSumiPath(SumiPath::SumiDir, sumi_path);
+        GenerateSumiPath(SumiPath::AmiiboDir, sumi_path / AMIIBO_DIR);
+        GenerateSumiPath(SumiPath::CacheDir, sumi_path_cache);
+        GenerateSumiPath(SumiPath::ConfigDir, sumi_path_config);
+        GenerateSumiPath(SumiPath::CrashDumpsDir, sumi_path / CRASH_DUMPS_DIR);
+        GenerateSumiPath(SumiPath::DumpDir, sumi_path / DUMP_DIR);
+        GenerateSumiPath(SumiPath::KeysDir, sumi_path / KEYS_DIR);
+        GenerateSumiPath(SumiPath::LoadDir, sumi_path / LOAD_DIR);
+        GenerateSumiPath(SumiPath::LogDir, sumi_path / LOG_DIR);
+        GenerateSumiPath(SumiPath::NANDDir, sumi_path / NAND_DIR);
+        GenerateSumiPath(SumiPath::PlayTimeDir, sumi_path / PLAY_TIME_DIR);
+        GenerateSumiPath(SumiPath::ScreenshotsDir, sumi_path / SCREENSHOTS_DIR);
+        GenerateSumiPath(SumiPath::SDMCDir, sumi_path / SDMC_DIR);
+        GenerateSumiPath(SumiPath::ShaderDir, sumi_path / SHADER_DIR);
+        GenerateSumiPath(SumiPath::TASDir, sumi_path / TAS_DIR);
+        GenerateSumiPath(SumiPath::IconsDir, sumi_path / ICONS_DIR);
     }
 
 private:
@@ -140,13 +140,13 @@ private:
 
     ~PathManagerImpl() = default;
 
-    void GenerateSudachiPath(SudachiPath sudachi_path, const fs::path& new_path) {
+    void GenerateSumiPath(SumiPath sumi_path, const fs::path& new_path) {
         void(FS::CreateDir(new_path));
 
-        SetSudachiPathImpl(sudachi_path, new_path);
+        SetSumiPathImpl(sumi_path, new_path);
     }
 
-    std::unordered_map<SudachiPath, fs::path> sudachi_paths;
+    std::unordered_map<SumiPath, fs::path> sumi_paths;
 };
 
 bool ValidatePath(const fs::path& path) {
@@ -230,22 +230,22 @@ void SetAppDirectory(const std::string& app_directory) {
     PathManagerImpl::GetInstance().Reinitialize(app_directory);
 }
 
-const fs::path& GetSudachiPath(SudachiPath sudachi_path) {
-    return PathManagerImpl::GetInstance().GetSudachiPathImpl(sudachi_path);
+const fs::path& GetSumiPath(SumiPath sumi_path) {
+    return PathManagerImpl::GetInstance().GetSumiPathImpl(sumi_path);
 }
 
-std::string GetSudachiPathString(SudachiPath sudachi_path) {
-    return PathToUTF8String(GetSudachiPath(sudachi_path));
+std::string GetSumiPathString(SumiPath sumi_path) {
+    return PathToUTF8String(GetSumiPath(sumi_path));
 }
 
-void SetSudachiPath(SudachiPath sudachi_path, const fs::path& new_path) {
+void SetSumiPath(SumiPath sumi_path, const fs::path& new_path) {
     if (!FS::IsDir(new_path)) {
         LOG_ERROR(Common_Filesystem, "Filesystem object at new_path={} is not a directory",
                   PathToUTF8String(new_path));
         return;
     }
 
-    PathManagerImpl::GetInstance().SetSudachiPathImpl(sudachi_path, new_path);
+    PathManagerImpl::GetInstance().SetSumiPathImpl(sumi_path, new_path);
 }
 
 #ifdef _WIN32

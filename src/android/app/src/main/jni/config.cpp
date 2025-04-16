@@ -125,18 +125,18 @@ void Config::ReadValues() {
 
     // Data Storage
     ReadSetting("Data Storage", Settings::values.use_virtual_sd);
-    FS::SetSudachiPath(FS::SudachiPath::NANDDir,
+    FS::SetSumiPath(FS::SumiPath::NANDDir,
                        config->Get("Data Storage", "nand_directory",
-                                   FS::GetSudachiPathString(FS::SudachiPath::NANDDir)));
-    FS::SetSudachiPath(FS::SudachiPath::SDMCDir,
+                                   FS::GetSumiPathString(FS::SumiPath::NANDDir)));
+    FS::SetSumiPath(FS::SumiPath::SDMCDir,
                        config->Get("Data Storage", "sdmc_directory",
-                                   FS::GetSudachiPathString(FS::SudachiPath::SDMCDir)));
-    FS::SetSudachiPath(FS::SudachiPath::LoadDir,
+                                   FS::GetSumiPathString(FS::SumiPath::SDMCDir)));
+    FS::SetSumiPath(FS::SumiPath::LoadDir,
                        config->Get("Data Storage", "load_directory",
-                                   FS::GetSudachiPathString(FS::SudachiPath::LoadDir)));
-    FS::SetSudachiPath(FS::SudachiPath::DumpDir,
+                                   FS::GetSumiPathString(FS::SumiPath::LoadDir)));
+    FS::SetSumiPath(FS::SumiPath::DumpDir,
                        config->Get("Data Storage", "dump_directory",
-                                   FS::GetSudachiPathString(FS::SudachiPath::DumpDir)));
+                                   FS::GetSumiPathString(FS::SumiPath::DumpDir)));
     ReadSetting("Data Storage", Settings::values.gamecard_inserted);
     ReadSetting("Data Storage", Settings::values.gamecard_current_game);
     ReadSetting("Data Storage", Settings::values.gamecard_path);
@@ -297,8 +297,8 @@ void Config::ReadValues() {
 
     // Web Service
     ReadSetting("WebService", Settings::values.web_api_url);
-    ReadSetting("WebService", Settings::values.sudachi_username);
-    ReadSetting("WebService", Settings::values.sudachi_token);
+    ReadSetting("WebService", Settings::values.sumi_username);
+    ReadSetting("WebService", Settings::values.sumi_token);
 
     // Network
     ReadSetting("Network", Settings::values.network_interface);
@@ -309,7 +309,7 @@ void Config::ReadValues() {
 }
 
 void Config::Initialize(const std::string& config_name) {
-    const auto fs_config_loc = FS::GetSudachiPath(FS::SudachiPath::ConfigDir);
+    const auto fs_config_loc = FS::GetSumiPath(FS::SumiPath::ConfigDir);
     const auto config_file = fmt::format("{}.ini", config_name);
 
     switch (type) {

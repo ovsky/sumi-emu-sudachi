@@ -396,11 +396,11 @@ void IGeneralService::GetCurrentNetworkProfile(HLERequestContext& ctx) {
                 .mtu{1500},
             },
             .uuid{0xdeadbeef, 0xdeadbeef},
-            .network_name{"sudachi Network"},
+            .network_name{"sumi Network"},
             .wireless_setting_data{
                 .ssid_length{12},
-                .ssid{"sudachi Network"},
-                .passphrase{"sudachipassword"},
+                .ssid{"sumi Network"},
+                .passphrase{"sumipassword"},
             },
         };
     }();

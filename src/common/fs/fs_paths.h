@@ -3,12 +3,12 @@
 
 #pragma once
 
-// sudachi data directories
+// sumi data directories
 
-#define SUDACHI_DIR "sudachi"
+#define SUDACHI_DIR "sumi"
 #define PORTABLE_DIR "user"
 
-// Sub-directories contained within a sudachi data directory
+// Sub-directories contained within a sumi data directory
 
 #define AMIIBO_DIR "amiibo"
 #define CACHE_DIR "cache"
@@ -26,6 +26,6 @@
 #define TAS_DIR "tas"
 #define ICONS_DIR "icons"
 
-// sudachi-specific files
+// sumi-specific files
 
-#define LOG_FILE "sudachi_log.txt"
+#define LOG_FILE "sumi_log.txt"

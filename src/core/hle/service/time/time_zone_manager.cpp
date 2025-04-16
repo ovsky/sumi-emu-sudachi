@@ -478,7 +478,7 @@ static bool ParsePosixName(const char* name, TimeZoneRule& rule) {
             if (rule.time_count > 0) {
                 UNIMPLEMENTED();
                 // TODO (lat9nq): Implement eggert/tz/localtime.c:tzparse:1329
-                // Seems to be unused in sudachi for now: I never hit the UNIMPLEMENTED in testing
+                // Seems to be unused in sumi for now: I never hit the UNIMPLEMENTED in testing
             }
 
             rule.ttis[0].gmt_offset = -std_offset;
@@ -670,7 +670,7 @@ static bool ParseTimeZoneBinary(TimeZoneRule& time_zone_rule, FileSys::VirtualFi
                 /* Ignore any trailing, no-op transitions generated
                    by zic as they don't help here and can run afoul
                    of bugs in zic 2016j or earlier.  */
-                // This is possibly unnecessary for sudachi, since Nintendo doesn't run zic
+                // This is possibly unnecessary for sumi, since Nintendo doesn't run zic
                 while (1 < time_zone_rule.time_count &&
                        (time_zone_rule.types[time_zone_rule.time_count - 1] ==
                         time_zone_rule.types[time_zone_rule.time_count - 2])) {

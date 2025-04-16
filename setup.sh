@@ -36,12 +36,12 @@ done
 git init
 
 git submodule add https://github.com/lsalzman/enet externals/enet
-git submodule add https://github.com/sudachi-emu/dynarmic externals/dynarmic
+git submodule add https://github.com/sumi-emu/dynarmic externals/dynarmic
 git submodule add https://github.com/libusb/libusb externals/libusb/libusb
-git submodule add https://github.com/sudachi-emu/discord-rpc externals/discord-rpc
+git submodule add https://github.com/sumi-emu/discord-rpc externals/discord-rpc
 git submodule add https://github.com/KhronosGroup/Vulkan-Headers externals/vulkan-headers
-git submodule add https://github.com/sudachi-emu/sirit externals/sirit
-git submodule add https://github.com/sudachi-emu/mbedtls externals/mbedtls
+git submodule add https://github.com/sumi-emu/sirit externals/sirit
+git submodule add https://github.com/sumi-emu/mbedtls externals/mbedtls
 git submodule add https://github.com/herumi/xbyak externals/xbyak
 git submodule add https://github.com/xiph/opus externals/opus
 git submodule add https://github.com/yhirose/cpp-httplib externals/cpp-httplib
@@ -49,9 +49,9 @@ git submodule add https://github.com/FFmpeg/FFmpeg externals/ffmpeg/ffmpeg
 git submodule add https://github.com/arun11299/cpp-jwt externals/cpp-jwt
 git submodule add https://github.com/bylaws/libadrenotools externals/libadrenotools
 git submodule add https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator externals/VulkanMemoryAllocator
-git submodule add https://github.com/sudachi-emu/breakpad externals/breakpad
+git submodule add https://github.com/sumi-emu/breakpad externals/breakpad
 git submodule add https://github.com/brofield/simpleini externals/simpleini
-git submodule add https://github.com/sudachi-emu/oaknut externals/oaknut
+git submodule add https://github.com/sumi-emu/oaknut externals/oaknut
 git submodule add https://github.com/KhronosGroup/Vulkan-Utility-Libraries externals/Vulkan-Utility-Libraries
 git submodule add https://github.com/microsoft/vcpkg externals/vcpkg
 git submodule add https://github.com/lat9nq/tzdb_to_nx externals/nx_tzdb/tzdb_to_nx

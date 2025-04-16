@@ -4,7 +4,7 @@
 # From: https://github.com/darealshinji/AppImageKit-checkrt
 
 # add your command to execute here
-exec=sudachi
+exec=sumi
 
 cd "$(dirname "$0")"
 if [ "x$exec" = "x" ]; then
@@ -24,5 +24,5 @@ export SSL_CERT_FILE="$PWD/ca-certificates.pem"
 #echo ">>>>> LD_LIBRARY_PATH $LD_LIBRARY_PATH"
 #echo ">>>>> LD_PRELOAD $LD_PRELOAD"
 
-exec ./usr/bin/sudachi "$@"
+exec ./usr/bin/sumi "$@"
 

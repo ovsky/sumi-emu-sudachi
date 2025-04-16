@@ -25,7 +25,7 @@ Config::Config(const ConfigType config_type)
     : type(config_type), global{config_type == ConfigType::GlobalConfig} {}
 
 void Config::Initialize(const std::string& config_name) {
-    const std::filesystem::path fs_config_loc = FS::GetSudachiPath(FS::SudachiPath::ConfigDir);
+    const std::filesystem::path fs_config_loc = FS::GetSumiPath(FS::SumiPath::ConfigDir);
     const auto config_file = fmt::format("{}.ini", config_name);
 
     switch (type) {
@@ -51,7 +51,7 @@ void Config::Initialize(const std::string& config_name) {
 
 void Config::Initialize(const std::optional<std::string> config_path) {
     const std::filesystem::path default_sdl_config_path =
-        FS::GetSudachiPath(FS::SudachiPath::ConfigDir) / "sdl3-config.ini";
+        FS::GetSumiPath(FS::SumiPath::ConfigDir) / "sdl3-config.ini";
     config_loc = config_path.value_or(FS::PathToUTF8String(default_sdl_config_path));
     void(FS::CreateParentDir(config_loc));
     SetUpIni();
@@ -275,11 +275,11 @@ void Config::ReadCoreValues() {
 void Config::ReadDataStorageValues() {
     BeginGroup(Settings::TranslateCategory(Settings::Category::DataStorage));
 
-    FS::SetSudachiPath(FS::SudachiPath::NANDDir, ReadStringSetting(std::string("nand_directory")));
-    FS::SetSudachiPath(FS::SudachiPath::SDMCDir, ReadStringSetting(std::string("sdmc_directory")));
-    FS::SetSudachiPath(FS::SudachiPath::LoadDir, ReadStringSetting(std::string("load_directory")));
-    FS::SetSudachiPath(FS::SudachiPath::DumpDir, ReadStringSetting(std::string("dump_directory")));
-    FS::SetSudachiPath(FS::SudachiPath::TASDir, ReadStringSetting(std::string("tas_directory")));
+    FS::SetSumiPath(FS::SumiPath::NANDDir, ReadStringSetting(std::string("nand_directory")));
+    FS::SetSumiPath(FS::SumiPath::SDMCDir, ReadStringSetting(std::string("sdmc_directory")));
+    FS::SetSumiPath(FS::SumiPath::LoadDir, ReadStringSetting(std::string("load_directory")));
+    FS::SetSumiPath(FS::SumiPath::DumpDir, ReadStringSetting(std::string("dump_directory")));
+    FS::SetSumiPath(FS::SumiPath::TASDir, ReadStringSetting(std::string("tas_directory")));
 
     ReadCategory(Settings::Category::DataStorage);
 
@@ -371,7 +371,7 @@ void Config::ReadScreenshotValues() {
     BeginGroup(Settings::TranslateCategory(Settings::Category::Screenshots));
 
     ReadCategory(Settings::Category::Screenshots);
-    FS::SetSudachiPath(FS::SudachiPath::ScreenshotsDir,
+    FS::SetSumiPath(FS::SumiPath::ScreenshotsDir,
                        ReadStringSetting(std::string("screenshot_path")));
 
     EndGroup();
@@ -578,20 +578,20 @@ void Config::SaveDataStorageValues() {
     BeginGroup(Settings::TranslateCategory(Settings::Category::DataStorage));
 
     WriteStringSetting(std::string("nand_directory"),
-                       FS::GetSudachiPathString(FS::SudachiPath::NANDDir),
-                       std::make_optional(FS::GetSudachiPathString(FS::SudachiPath::NANDDir)));
+                       FS::GetSumiPathString(FS::SumiPath::NANDDir),
+                       std::make_optional(FS::GetSumiPathString(FS::SumiPath::NANDDir)));
     WriteStringSetting(std::string("sdmc_directory"),
-                       FS::GetSudachiPathString(FS::SudachiPath::SDMCDir),
-                       std::make_optional(FS::GetSudachiPathString(FS::SudachiPath::SDMCDir)));
+                       FS::GetSumiPathString(FS::SumiPath::SDMCDir),
+                       std::make_optional(FS::GetSumiPathString(FS::SumiPath::SDMCDir)));
     WriteStringSetting(std::string("load_directory"),
-                       FS::GetSudachiPathString(FS::SudachiPath::LoadDir),
-                       std::make_optional(FS::GetSudachiPathString(FS::SudachiPath::LoadDir)));
+                       FS::GetSumiPathString(FS::SumiPath::LoadDir),
+                       std::make_optional(FS::GetSumiPathString(FS::SumiPath::LoadDir)));
     WriteStringSetting(std::string("dump_directory"),
-                       FS::GetSudachiPathString(FS::SudachiPath::DumpDir),
-                       std::make_optional(FS::GetSudachiPathString(FS::SudachiPath::DumpDir)));
+                       FS::GetSumiPathString(FS::SumiPath::DumpDir),
+                       std::make_optional(FS::GetSumiPathString(FS::SumiPath::DumpDir)));
     WriteStringSetting(std::string("tas_directory"),
-                       FS::GetSudachiPathString(FS::SudachiPath::TASDir),
-                       std::make_optional(FS::GetSudachiPathString(FS::SudachiPath::TASDir)));
+                       FS::GetSumiPathString(FS::SumiPath::TASDir),
+                       std::make_optional(FS::GetSumiPathString(FS::SumiPath::TASDir)));
 
     WriteCategory(Settings::Category::DataStorage);
 
@@ -684,7 +684,7 @@ void Config::SaveScreenshotValues() {
     BeginGroup(Settings::TranslateCategory(Settings::Category::Screenshots));
 
     WriteStringSetting(std::string("screenshot_path"),
-                       FS::GetSudachiPathString(FS::SudachiPath::ScreenshotsDir));
+                       FS::GetSumiPathString(FS::SumiPath::ScreenshotsDir));
     WriteCategory(Settings::Category::Screenshots);
 
     EndGroup();

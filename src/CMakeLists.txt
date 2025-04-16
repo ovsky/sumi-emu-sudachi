@@ -205,11 +205,11 @@ if (SUDACHI_TESTS)
 endif()
 
 if (ENABLE_SDL3)
-    add_subdirectory(sudachi_cmd)
+    add_subdirectory(sumi_cmd)
 endif()
 
 if (ENABLE_QT)
-    add_subdirectory(sudachi)
+    add_subdirectory(sumi)
 endif()
 
 if (ENABLE_WEB_SERVICE)
@@ -217,6 +217,6 @@ if (ENABLE_WEB_SERVICE)
 endif()
 
 if (ANDROID)
-    add_subdirectory(android/app/src/main/jni) # sudachi_android/app/src/main/cpp
-    target_include_directories(sudachi-android PRIVATE android/app/src/main) # sudachi_android/app/src/main
+    add_subdirectory(android/app/src/main/jni) # sumi_android/app/src/main/cpp
+    target_include_directories(sumi-android PRIVATE android/app/src/main) # sumi_android/app/src/main
 endif()
