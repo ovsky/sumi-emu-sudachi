@@ -23,12 +23,12 @@ object ThemeHelper {
     fun setTheme(activity: AppCompatActivity) {
         setThemeMode(activity)
         when (Theme.from(IntSetting.THEME.getInt())) {
-            Theme.Default -> activity.setTheme(R.style.Theme_Sumi_Main)
+            Theme.Default -> activity.setTheme(R.style.Theme_Sudachi_Main)
             Theme.MaterialYou -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                    activity.setTheme(R.style.Theme_Sumi_Main_MaterialYou)
+                    activity.setTheme(R.style.Theme_Sudachi_Main_MaterialYou)
                 } else {
-                    activity.setTheme(R.style.Theme_Sumi_Main)
+                    activity.setTheme(R.style.Theme_Sudachi_Main)
                 }
             }
         }
