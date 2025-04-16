@@ -44,7 +44,14 @@ object SoftwareKeyboard {
             object : Runnable {
                 override fun run() {
                     val insets = ViewCompat.getRootWindowInsets(overlayView)
-                    val isKeyboardVisible = insets!!.isVisible(WindowInsets.Type.ime())
+                    val isKeyboardVisible = insets!!.isVisible(WindowInsets.Type.ime() as Int)
+
+                    // val isKeyboardVisible = insets!!.isVisible(WindowInsets.Type.ime())
+                    // val isKeyboardVisible = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+                    //     insets!!.isVisible(WindowInsets.Type.ime() as Int)
+                    // } else {
+                    //     false // Fallback for older API levels
+                    // }
                     if (isKeyboardVisible) {
                         handler.postDelayed(this, delayMs.toLong())
                         return
