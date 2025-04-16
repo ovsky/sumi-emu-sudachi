@@ -1,12 +1,12 @@
 <h1 align="center">
-    <a href="https://github.com/ovsky/sumi" target="_blank">
-        <img height="60%" width="60%" src="https://github.com/sir-bender/sumi_revive/blob/master/src/android/app/src/main/res/drawable-xhdpi/tv_banner_big.png"><br>
+    <a href="https://github.com/ovsky/sumi-emu" target="_blank">
+        <img height="60%" width="60%" src="https://github.com/ovsky/sumi-emu/blob/master/src/android/app/src/main/res/drawable-xhdpi/tv_banner_big.png"><br>
     </a>
     <a href="https://discord.gg/work-in-progress" target="_blank">
         <img src="https://img.shields.io/discord/1104386300750082081.svg?label=&logo=discord&logoColor=ffffff&color=5865F2&labelColor=404EED">
     </a>
-    <!-- <a href="https://github.com/ovsky/sumi/actions/workflows/ci.yml" target="_blank">
-        <img src="https://github.com/ovsky/sumi/actions/workflows/ci.yml/badge.svg"><br>
+    <!-- <a href="https://github.com/ovsky/sumi-emu/actions/workflows/ci.yml" target="_blank">
+        <img src="https://github.com/ovsky/sumi-emu/actions/workflows/ci.yml/badge.svg"><br>
     </a> -->
 </h1>
 
@@ -22,7 +22,7 @@
 
 ### Suggested GPU Drivers
 
-To achieve best performance, download the best driver for your device and aplly it in Sumi
+To achieve best performance, download the best driver for your device and apply it in Sumi
 
 #### Mesa / Adreno - Sources
 
