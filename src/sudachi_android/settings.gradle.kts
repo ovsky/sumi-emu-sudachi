@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Sudachi"
+rootProject.name = "Sumi"
 include(":app")
