@@ -24,7 +24,7 @@ import java.lang.ref.WeakReference
 
 /**
  * Class which contains methods that interact
- * with the native side of the Sudachi code.
+ * with the native side of the Sumi code.
  */
 object NativeLibrary {
     @JvmField
@@ -338,7 +338,7 @@ object NativeLibrary {
     }
 
     /**
-     * Logs the Sudachi version, Android version and, CPU.
+     * Logs the Sumi version, Android version and, CPU.
      */
     external fun logDeviceInfo()
 

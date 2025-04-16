@@ -65,9 +65,9 @@ endif()
 # SDL3
 if (USE_SDL3_FROM_EXTERNALS)
     if (NOT WIN32)
-        # Sudachi itself needs: Atomic Audio Events Joystick Haptic Sensor Threads Timers
+        # Sumi itself needs: Atomic Audio Events Joystick Haptic Sensor Threads Timers
         # Since 2.0.18 Atomic+Threads required for HIDAPI/libusb (see https://github.com/libsdl-org/SDL/issues/5095)
-        # Sudachi-cmd also needs: Video (depends on Loadso/Dlopen)
+        # Sumi-cmd also needs: Video (depends on Loadso/Dlopen)
         # CPUinfo also required for SDL Audio, at least until 2.28.0 (see https://github.com/libsdl-org/SDL/issues/7809)
         set(SDL_UNUSED_SUBSYSTEMS
             File Filesystem

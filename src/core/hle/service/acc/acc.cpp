@@ -889,7 +889,7 @@ Result Module::Interface::InitializeApplicationInfoBase() {
     case FileSys::StorageId::Host:
     case FileSys::StorageId::NandUser:
     case FileSys::StorageId::SdCard:
-    case FileSys::StorageId::None: // Sudachi specific, differs from hardware
+    case FileSys::StorageId::None: // Sumi specific, differs from hardware
         application_info.application_type = ApplicationType::Digital;
         break;
     default:
