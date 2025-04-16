@@ -26,7 +26,7 @@ class SliderViewHolder(
         binding.textSettingValue.text =
             String.format(
                 binding.textSettingValue.context.getString(R.string.value_with_units),
-                setting.getSelectedValue(),
+                setting.getSelectedValue().toString(),
                 setting.units,
             )
 
