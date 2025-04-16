@@ -2,45 +2,45 @@
 <resources>
 
     <style name="Theme.Sumi.Splash.Main" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/sudachi_surface</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_sudachi_round</item>
+        <item name="windowSplashScreenBackground">@color/sumi_surface</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_sumi_round</item>
         <item name="postSplashScreenTheme">@style/Theme.Sumi.Main</item>
     </style>
 
     <style name="Theme.Sumi.Main" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/sudachi_primary</item>
-        <item name="colorOnPrimary">@color/sudachi_onPrimary</item>
-        <item name="colorPrimaryContainer">@color/sudachi_primaryContainer</item>
-        <item name="colorOnPrimaryContainer">@color/sudachi_onPrimaryContainer</item>
-        <item name="colorSecondary">@color/sudachi_secondary</item>
-        <item name="colorOnSecondary">@color/sudachi_onSecondary</item>
-        <item name="colorSecondaryContainer">@color/sudachi_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/sudachi_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/sudachi_tertiary</item>
-        <item name="colorOnTertiary">@color/sudachi_onTertiary</item>
-        <item name="colorTertiaryContainer">@color/sudachi_tertiaryContainer</item>
-        <item name="colorOnTertiaryContainer">@color/sudachi_onTertiaryContainer</item>
-        <item name="colorError">@color/sudachi_error</item>
-        <item name="colorErrorContainer">@color/sudachi_errorContainer</item>
-        <item name="colorOnError">@color/sudachi_onError</item>
-        <item name="colorOnErrorContainer">@color/sudachi_onErrorContainer</item>
-        <item name="android:colorBackground">@color/sudachi_background</item>
-        <item name="colorOnBackground">@color/sudachi_onBackground</item>
-        <item name="colorSurface">@color/sudachi_surface</item>
-        <item name="colorOnSurface">@color/sudachi_onSurface</item>
-        <item name="colorSurfaceVariant">@color/sudachi_surfaceVariant</item>
-        <item name="colorOnSurfaceVariant">@color/sudachi_onSurfaceVariant</item>
-        <item name="colorOutline">@color/sudachi_outline</item>
-        <item name="colorOnSurfaceInverse">@color/sudachi_inverseOnSurface</item>
-        <item name="colorSurfaceInverse">@color/sudachi_inverseSurface</item>
-        <item name="colorPrimaryInverse">@color/sudachi_inversePrimary</item>
-        <item name="android:shadowColor">@color/sudachi_shadow</item>
+        <item name="colorPrimary">@color/sumi_primary</item>
+        <item name="colorOnPrimary">@color/sumi_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/sumi_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/sumi_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/sumi_secondary</item>
+        <item name="colorOnSecondary">@color/sumi_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/sumi_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/sumi_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/sumi_tertiary</item>
+        <item name="colorOnTertiary">@color/sumi_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/sumi_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/sumi_onTertiaryContainer</item>
+        <item name="colorError">@color/sumi_error</item>
+        <item name="colorErrorContainer">@color/sumi_errorContainer</item>
+        <item name="colorOnError">@color/sumi_onError</item>
+        <item name="colorOnErrorContainer">@color/sumi_onErrorContainer</item>
+        <item name="android:colorBackground">@color/sumi_background</item>
+        <item name="colorOnBackground">@color/sumi_onBackground</item>
+        <item name="colorSurface">@color/sumi_surface</item>
+        <item name="colorOnSurface">@color/sumi_onSurface</item>
+        <item name="colorSurfaceVariant">@color/sumi_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/sumi_onSurfaceVariant</item>
+        <item name="colorOutline">@color/sumi_outline</item>
+        <item name="colorOnSurfaceInverse">@color/sumi_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/sumi_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/sumi_inversePrimary</item>
+        <item name="android:shadowColor">@color/sumi_shadow</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
 
-        <item name="sliderStyle">@style/SudachiSlider</item>
-        <item name="materialAlertDialogTheme">@style/SudachiMaterialDialog</item>
+        <item name="sliderStyle">@style/SumiSlider</item>
+        <item name="materialAlertDialogTheme">@style/SumiMaterialDialog</item>
 
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
 

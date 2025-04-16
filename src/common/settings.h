@@ -471,7 +471,7 @@ struct Values {
         linkage, 0,    "rng_seed",       Category::System, Specialization::Hex,
         true,    true, &rng_seed_enabled};
     Setting<std::string> device_name{
-        linkage, "sudachi", "device_name", Category::System, Specialization::Default, true, true};
+        linkage, "sumi", "device_name", Category::System, Specialization::Default, true, true};
 
     Setting<s32> current_user{linkage, 0, "current_user", Category::System};
 
@@ -609,11 +609,11 @@ struct Values {
                                            Category::Network};
 
     // WebService
-    Setting<std::string> web_api_url{linkage, "https://api.sudachi-emu.org", "web_api_url",
+    Setting<std::string> web_api_url{linkage, "https://api.sumi-emu.org", "web_api_url",
                                      Category::WebService};
-    Setting<std::string> sudachi_username{linkage, std::string(), "sudachi_username",
+    Setting<std::string> sumi_username{linkage, std::string(), "sumi_username",
                                           Category::WebService};
-    Setting<std::string> sudachi_token{linkage, std::string(), "sudachi_token",
+    Setting<std::string> sumi_token{linkage, std::string(), "sumi_token",
                                        Category::WebService};
 
     // Add-Ons

@@ -5,7 +5,7 @@
   <string name="app_name" translatable="false">Sumi</string>
   <string name="app_disclaimer">This software will run games for the Nintendo Switch game console.
     No game titles or keys are included.&lt;br /&gt;&lt;br /&gt;Before you begin, please locate your <![CDATA[<b> prod.keys </b>]]>
-    file on your device storage.&lt;br /&gt;&lt;br /&gt;<![CDATA[<a href="https://sudachi-emu.org/help/quickstart">Learn more</a>]]></string>
+    file on your device storage.&lt;br /&gt;&lt;br /&gt;<![CDATA[<a href="https://sumi-emu.org/help/quickstart">Learn more</a>]]></string>
   <string name="notice_notification_channel_name">Notices and errors</string>
   <string name="notice_notification_channel_id" translatable="false">noticesAndErrors</string>
   <string name="notice_notification_channel_description">Shows notifications when something goes
@@ -145,8 +145,8 @@
   <string name="custom_driver_not_supported">Custom drivers not supported</string>
   <string name="custom_driver_not_supported_description">Custom driver loading isn\'t currently
     supported for this device.\nCheck this option again in the future to see if support was added!</string>
-  <string name="manage_sudachi_data">Manage Sumi Data</string>
-  <string name="manage_sudachi_data_description">Import/export firmware, keys, user data, and more!</string>
+  <string name="manage_sumi_data">Manage Sumi Data</string>
+  <string name="manage_sumi_data_description">Import/export firmware, keys, user data, and more!</string>
   <string name="share_save_file">Share save file</string>
   <string name="export_save_failed">Failed to export save</string>
   <string name="game_folders">Game folders</string>
@@ -209,13 +209,13 @@
   <string name="exporting_user_data">Exporting user data…</string>
   <string name="importing_user_data">Importing user data…</string>
   <string name="import_user_data">Import user data</string>
-  <string name="invalid_sudachi_backup">Invalid Sumi Backup</string>
+  <string name="invalid_sumi_backup">Invalid Sumi Backup</string>
   <string name="user_data_export_success">User data exported successfully</string>
   <string name="user_data_import_success">User data imported successfully</string>
   <string name="user_data_export_cancelled">Export cancelled</string>
   <string name="user_data_import_failed_description">Make sure the user data folders are at the root
     of the zip folder and contain a config file at config/config.ini and try again.</string>
-  <string name="website_link">https://sudachi.emuplace.app</string>
+  <string name="website_link">https://sumi.emuplace.app</string>
 
   <!-- General settings strings -->
   <string name="frame_limit_enable">Limit speed</string>

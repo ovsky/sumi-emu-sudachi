@@ -5,7 +5,7 @@
 
 #include "common/common_types.h"
 
-// This file contains sudachi's HLE API version constants.
+// This file contains sumi's HLE API version constants.
 
 namespace HLE::ApiVersion {
 

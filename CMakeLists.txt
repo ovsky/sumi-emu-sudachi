@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.22)
 
-project(sudachi)
+project(sumi)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/externals/cmake-modules")
@@ -57,7 +57,7 @@ CMAKE_DEPENDENT_OPTION(SUDACHI_ROOM "Compile LDN room server" ON "NOT ANDROID" O
 
 CMAKE_DEPENDENT_OPTION(SUDACHI_CRASH_DUMPS "Compile crash dump (Minidump) support" OFF "WIN32 OR LINUX" OFF)
 
-option(SUDACHI_USE_BUNDLED_VCPKG "Use vcpkg for sudachi dependencies" "${MSVC}")
+option(SUDACHI_USE_BUNDLED_VCPKG "Use vcpkg for sumi dependencies" "${MSVC}")
 
 option(SUDACHI_CHECK_SUBMODULES "Check if submodules are present" ON)
 
@@ -65,7 +65,7 @@ option(SUDACHI_ENABLE_LTO "Enable link-time optimization" OFF)
 
 option(SUDACHI_DOWNLOAD_TIME_ZONE_DATA "Always download time zone binaries" OFF)
 
-option(SUDACHI_ENABLE_PORTABLE "Allow sudachi to enable portable mode if a user folder is found in the CWD" ON)
+option(SUDACHI_ENABLE_PORTABLE "Allow sumi to enable portable mode if a user folder is found in the CWD" ON)
 
 CMAKE_DEPENDENT_OPTION(SUDACHI_USE_FASTER_LD "Check if a faster linker is available" ON "NOT WIN32" OFF)
 
@@ -127,7 +127,7 @@ if (SUDACHI_USE_BUNDLED_VCPKG)
         set(VCPKG_DOWNLOADS_PATH ${PROJECT_SOURCE_DIR}/externals/vcpkg/downloads)
         set(NASM_VERSION "2.16.01")
         set(NASM_DESTINATION_PATH ${VCPKG_DOWNLOADS_PATH}/nasm-${NASM_VERSION}-win64.zip)
-        set(NASM_DOWNLOAD_URL "https://github.com/sudachi-emu/windows-binaries/raw/main/nasm/nasm-${NASM_VERSION}-win64.zip")
+        set(NASM_DOWNLOAD_URL "https://github.com/sumi-emu/windows-binaries/raw/main/nasm/nasm-${NASM_VERSION}-win64.zip")
 
         if (NOT EXISTS ${NASM_DESTINATION_PATH})
             file(DOWNLOAD ${NASM_DOWNLOAD_URL} ${NASM_DESTINATION_PATH} SHOW_PROGRESS STATUS NASM_STATUS)
@@ -140,7 +140,7 @@ if (SUDACHI_USE_BUNDLED_VCPKG)
     endif()
 
     if (SUDACHI_TESTS)
-        list(APPEND VCPKG_MANIFEST_FEATURES "sudachi-tests")
+        list(APPEND VCPKG_MANIFEST_FEATURES "sumi-tests")
     endif()
     if (ENABLE_WEB_SERVICE)
         list(APPEND VCPKG_MANIFEST_FEATURES "web-service")
@@ -212,9 +212,9 @@ if (EXISTS ${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.json
                    COPYONLY)
 endif()
 if (ENABLE_COMPATIBILITY_LIST_DOWNLOAD AND NOT EXISTS ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json)
-    message(STATUS "Downloading compatibility list for sudachi...")
+    message(STATUS "Downloading compatibility list for sumi...")
     file(DOWNLOAD
-        https://api.sudachi-emu.org/gamedb/
+        https://api.sumi-emu.org/gamedb/
         "${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json" SHOW_PROGRESS)
 endif()
 if (NOT EXISTS ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json)
@@ -380,7 +380,7 @@ if(ENABLE_QT6 AND Qt6_LOCATION)
     list(APPEND CMAKE_PREFIX_PATH "${Qt6_LOCATION}")
 endif()
 
-function(set_sudachi_qt_components)
+function(set_sumi_qt_components)
     # Best practice is to ask for all components at once, so they are from the same version
     set(SUDACHI_QT_COMPONENTS2 Core Widgets Concurrent)
     if (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
@@ -399,7 +399,7 @@ function(set_sudachi_qt_components)
         list(APPEND SUDACHI_QT_COMPONENTS2 Network)
     endif()
     set(SUDACHI_QT_COMPONENTS ${SUDACHI_QT_COMPONENTS2} PARENT_SCOPE)
-endfunction(set_sudachi_qt_components)
+endfunction(set_sumi_qt_components)
 
 # Qt5 requires that we find components, so it doesn't fit our pretty little find package function
 if(ENABLE_QT)
@@ -408,18 +408,18 @@ if(ENABLE_QT)
     set(QT5_VERSION 5.15)
     set(QT6_VERSION 6.8.2)
 
-    set_sudachi_qt_components()
+    set_sumi_qt_components()
     if (ENABLE_QT6)
         find_package(Qt6 ${QT6_VERSION} COMPONENTS ${SUDACHI_QT_COMPONENTS})
     endif()
     if (Qt6_FOUND)
-        message(STATUS "sudachi/CMakeLists.txt: Qt6Widgets_VERSION ${Qt6Widgets_VERSION}, setting QT_VERSION")
+        message(STATUS "sumi/CMakeLists.txt: Qt6Widgets_VERSION ${Qt6Widgets_VERSION}, setting QT_VERSION")
         set(QT_VERSION ${Qt6Widgets_VERSION})
         set(QT_MAJOR_VERSION 6)
         # Qt6 sets cxx_std_17 and we need to undo that
         set_target_properties(Qt6::Platform PROPERTIES INTERFACE_COMPILE_FEATURES "")
     else()
-        message(STATUS "sudachi/CMakeLists.txt: Qt6 not found/not selected, trying for Qt5")
+        message(STATUS "sumi/CMakeLists.txt: Qt6 not found/not selected, trying for Qt5")
         # When Qt6 partially found, need this set to use Qt5 when not specifying version
         set(QT_DEFAULT_MAJOR_VERSION 5)
         set(QT_MAJOR_VERSION 5)
@@ -534,13 +534,13 @@ if(ENABLE_QT)
             set(SUDACHI_USE_QT_MULTIMEDIA ON CACHE BOOL "Use Qt Multimedia" FORCE)
         endif()
 
-        set_sudachi_qt_components()
+        set_sumi_qt_components()
         find_package(Qt5 ${QT5_VERSION} COMPONENTS ${SUDACHI_QT_COMPONENTS} ${QT_PREFIX_HINT} ${SUDACHI_QT_NO_CMAKE_SYSTEM_PATH})
     endif()
 
 endif()
 
-# find SDL3 exports a bunch of variables that are needed, so its easier to do this outside of the sudachi_find_package
+# find SDL3 exports a bunch of variables that are needed, so its easier to do this outside of the sumi_find_package
 if (ENABLE_SDL3 AND NOT USE_SDL3_FROM_EXTERNALS)
     if (SUDACHI_USE_BUNDLED_SDL3)
         # Detect toolchain and platform
@@ -628,7 +628,7 @@ if (NOT CLANG_FORMAT)
         message(STATUS "Clang format not found! Downloading...")
         set(CLANG_FORMAT "${PROJECT_BINARY_DIR}/externals/clang-format${CLANG_FORMAT_POSTFIX}.exe")
         file(DOWNLOAD
-            https://github.com/sudachi-emu/windows-binaries/raw/main/clang-format${CLANG_FORMAT_POSTFIX}.exe
+            https://github.com/sumi-emu/windows-binaries/raw/main/clang-format${CLANG_FORMAT_POSTFIX}.exe
             "${CLANG_FORMAT}" SHOW_PROGRESS
             STATUS DOWNLOAD_SUCCESS)
         if (NOT DOWNLOAD_SUCCESS EQUAL 0)
@@ -710,11 +710,11 @@ endif()
 
 add_subdirectory(src)
 
-# Set sudachi project or sudachi-cmd project as default StartUp Project in Visual Studio depending on whether QT is enabled or not
+# Set sumi project or sumi-cmd project as default StartUp Project in Visual Studio depending on whether QT is enabled or not
 if(ENABLE_QT)
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT sudachi)
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT sumi)
 else()
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT sudachi-cmd)
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT sumi-cmd)
 endif()
 
 
@@ -727,13 +727,13 @@ endif()
 # https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html
 # https://www.freedesktop.org/software/appstream/docs/
 if(ENABLE_QT AND UNIX AND NOT APPLE)
-    install(FILES "dist/org.sudachi_emu.sudachi.desktop"
+    install(FILES "dist/org.sumi_emu.sumi.desktop"
             DESTINATION "share/applications")
-    install(FILES "dist/sudachi.svg"
+    install(FILES "dist/sumi.svg"
             DESTINATION "share/icons/hicolor/scalable/apps"
-            RENAME "org.sudachi_emu.sudachi.svg")
-    install(FILES "dist/org.sudachi_emu.sudachi.xml"
+            RENAME "org.sumi_emu.sumi.svg")
+    install(FILES "dist/org.sumi_emu.sumi.xml"
             DESTINATION "share/mime/packages")
-    install(FILES "dist/org.sudachi_emu.sudachi.metainfo.xml"
+    install(FILES "dist/org.sumi_emu.sumi.metainfo.xml"
             DESTINATION "share/metainfo")
 endif()

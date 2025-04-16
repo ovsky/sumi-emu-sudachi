@@ -33,7 +33,7 @@ private:
      * Applies a value read from the config to a Setting.
      *
      * @param group The name of the INI group
-     * @param setting The sudachi setting to modify
+     * @param setting The sumi setting to modify
      */
     template <typename Type, bool ranged>
     void ReadSetting(const std::string& group, Settings::Setting<Type, ranged>& setting);

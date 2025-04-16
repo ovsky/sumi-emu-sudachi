@@ -100,13 +100,13 @@ jfieldID GetPlayerInputButtonColorRightField();
 jfieldID GetPlayerInputProfileNameField();
 jfieldID GetPlayerInputUseSystemVibratorField();
 
-jclass GetSudachiInputDeviceInterface();
-jmethodID GetSudachiDeviceGetName();
-jmethodID GetSudachiDeviceGetGUID();
-jmethodID GetSudachiDeviceGetPort();
-jmethodID GetSudachiDeviceGetSupportsVibration();
-jmethodID GetSudachiDeviceVibrate();
-jmethodID GetSudachiDeviceGetAxes();
-jmethodID GetSudachiDeviceHasKeys();
+jclass GetSumiInputDeviceInterface();
+jmethodID GetSumiDeviceGetName();
+jmethodID GetSumiDeviceGetGUID();
+jmethodID GetSumiDeviceGetPort();
+jmethodID GetSumiDeviceGetSupportsVibration();
+jmethodID GetSumiDeviceVibrate();
+jmethodID GetSumiDeviceGetAxes();
+jmethodID GetSumiDeviceHasKeys();
 
 } // namespace Common::Android

@@ -260,7 +260,7 @@ void ShaderCache::LoadDiskResources(u64 title_id, std::stop_token stop_loading,
     if (title_id == 0) {
         return;
     }
-    const auto shader_dir{Common::FS::GetSudachiPath(Common::FS::SudachiPath::ShaderDir)};
+    const auto shader_dir{Common::FS::GetSumiPath(Common::FS::SumiPath::ShaderDir)};
     const auto base_dir{shader_dir / fmt::format("{:016x}", title_id)};
     if (!Common::FS::CreateDir(shader_dir) || !Common::FS::CreateDir(base_dir)) {
         LOG_ERROR(Common_Filesystem, "Failed to create shader cache directories");

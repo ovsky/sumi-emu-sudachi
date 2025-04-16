@@ -261,7 +261,7 @@ struct CheatVmOpcode {
 
 class DmntCheatVm {
 public:
-    /// Helper Type for DmntCheatVm <=> sudachi Interface
+    /// Helper Type for DmntCheatVm <=> sumi Interface
     class Callbacks {
     public:
         virtual ~Callbacks();
