@@ -1,3 +1,16 @@
+### 📦 Repository achieved. But...
+
+This repository was achieved, but it is good news!<br>
+We have moved, because we changed the Sumi base - from Sudachi, focused on mobile devices - to the more stable and better Citron base. 
+
+*We will still provide the best possible emulator, combining the most important advantages of Yuzu, Suyu, Citron, Sudachi and above all - our own - which we consistently do!*
+
+The new version of Sumi is available here: https://github.com/ovsky/sumi-emu
+
+**Have fun! Sumi Team :)**
+
+---
+
 <h1 align="center">
     <a href="https://github.com/ovsky/sumi-emu" target="_blank">
         <img height="60%" width="60%" src="https://github.com/ovsky/sumi-emu/blob/master/src/android/app/src/main/res/drawable-xhdpi/tv_banner_big.png"><br>
